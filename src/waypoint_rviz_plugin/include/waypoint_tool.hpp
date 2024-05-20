@@ -48,7 +48,7 @@ private Q_SLOTS:
 
 private:
   float vehicle_z;
-  int robot_id;
+  int robot_id = 0;
   rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr sub_;
   rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr pub_;
   rclcpp::Publisher<sensor_msgs::msg::Joy>::SharedPtr pub_joy_;

@@ -154,6 +154,6 @@ def generate_launch_description():
     ld.add_action(start_sensor_scan_generation)
     ld.add_action(start_loam_interface)
     ld.add_action(start_joy)
-    ld.add_action(OpaqueFunction(function=launch_rviz_node, args=[robot_id]))
+    # ld.add_action(OpaqueFunction(function=launch_rviz_node, args=[robot_id]))
 
     return ld

@@ -65,7 +65,7 @@ def generate_launch_description():
     multiOffsetRotateY = LaunchConfiguration('multiOffsetRotateY')
     
     declare_robot_id = DeclareLaunchArgument('robot_id', default_value='0', description='')
-    declare_sensorOffsetX = DeclareLaunchArgument('sensorOffsetX', default_value='0.0', description='')
+    declare_sensorOffsetX = DeclareLaunchArgument('sensorOffsetX', default_value='0.125', description='')
     declare_sensorOffsetY = DeclareLaunchArgument('sensorOffsetY', default_value='0.0', description='')
     declare_cameraOffsetZ = DeclareLaunchArgument('cameraOffsetZ', default_value='0.0', description='')
     declare_twoWayDrive = DeclareLaunchArgument('twoWayDrive', default_value='true', description='')
@@ -90,8 +90,8 @@ def generate_launch_description():
         parameters=[{
             'robot_id': robot_id,
             "pathFolder" : os.path.join(get_package_share_directory('local_planner'), 'paths'),
-            "vehicleLength" : 0.6,
-            "vehicleWidth" : 0.6,
+            "vehicleLength" : 0.31,
+            "vehicleWidth" : 0.215,
             "sensorOffsetX" : LaunchConfiguration('sensorOffsetX'),
             "sensorOffsetY" : LaunchConfiguration('sensorOffsetY'),
             "twoWayDrive" : LaunchConfiguration('twoWayDrive'),
@@ -100,15 +100,15 @@ def generate_launch_description():
             "useTerrainAnalysis" : True,
             "checkObstacle" : True,
             "checkRotObstacle" : False,
-            "adjacentRange" : 4.25,
-            "obstacleHeightThre" : 0.15,
+            "adjacentRange" : 1.0,
+            "obstacleHeightThre" : 0.05,
             "groundHeightThre" : 0.1,
             "costHeightThre" : 0.1,
             "costScore" : 0.02,
             "useCost" : False,
             "pointPerPathThre" : 2,
-            "minRelZ" : -0.5,
-            "maxRelZ" : 0.25,
+            "minRelZ" : -0.1,
+            "maxRelZ" : 1.0,
             "maxSpeed" : LaunchConfiguration('maxSpeed'),
             "dirWeight" : 0.02,
             "dirThre" : 90.0,
@@ -144,7 +144,7 @@ def generate_launch_description():
             "twoWayDrive" : LaunchConfiguration('twoWayDrive'),
             "lookAheadDis" : 0.5,
             "yawRateGain" : 7.5,
-            "stopYawRateGain" : 7.5,
+            "stopYawRateGain" : 0.5,
             "maxYawRate" : 90.0,
             "maxSpeed" : LaunchConfiguration('maxSpeed'),
             "maxAccel" : 2.5,

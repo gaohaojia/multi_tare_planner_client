@@ -36,10 +36,10 @@ def generate_launch_description():
                 "noDataObstacle" : False,
                 "noDataBlockSkipNum" : 0,
                 "minBlockPointNum" : 10,
-                "vehicleHeight" : 1.5,
+                "vehicleHeight" : 0.16,
                 "voxelPointUpdateThre" : 100,
                 "voxelTimeUpdateThre" : 2.0,
-                "minRelZ" : -2.5,
+                "minRelZ" : -0.1,
                 "maxRelZ" : 1.0,
                 "disRatioZ" : 0.2,
             }]
