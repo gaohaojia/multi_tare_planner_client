@@ -126,6 +126,12 @@ def generate_launch_description():
         }.items()
     )
 
+    start_pointcloud_filter = Node(
+        package='pointcloud_filter',
+        executable='pointcloud_filter',
+        name='pointcloud_filter'
+    )
+
     start_joy = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(
             get_package_share_directory('joy'), 'launch', 'joy-launch.py')
@@ -153,7 +159,8 @@ def generate_launch_description():
     ld.add_action(start_terrain_analysis_ext)
     ld.add_action(start_sensor_scan_generation)
     ld.add_action(start_loam_interface)
+    ld.add_action(start_pointcloud_filter)
     ld.add_action(start_joy)
-    # ld.add_action(OpaqueFunction(function=launch_rviz_node, args=[robot_id]))
+    ld.add_action(OpaqueFunction(function=launch_rviz_node, args=[robot_id]))
 
     return ld

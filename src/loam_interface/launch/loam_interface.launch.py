@@ -17,7 +17,7 @@ def generate_launch_description():
             parameters=[{
                 'robot_id': LaunchConfiguration('robot_id'),
                 "stateEstimationTopic" : "Odometry",
-                "registeredScanTopic" : "cloud_registered",
+                "registeredScanTopic" : "pointcloud_filtered",
                 "flipStateEstimation" : False,
                 "flipRegisteredScan" : False,
                 "sendTF" : True,

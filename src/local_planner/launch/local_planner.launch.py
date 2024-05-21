@@ -68,7 +68,7 @@ def generate_launch_description():
     declare_sensorOffsetX = DeclareLaunchArgument('sensorOffsetX', default_value='0.125', description='')
     declare_sensorOffsetY = DeclareLaunchArgument('sensorOffsetY', default_value='0.0', description='')
     declare_cameraOffsetZ = DeclareLaunchArgument('cameraOffsetZ', default_value='0.0', description='')
-    declare_twoWayDrive = DeclareLaunchArgument('twoWayDrive', default_value='true', description='')
+    declare_twoWayDrive = DeclareLaunchArgument('twoWayDrive', default_value='false', description='')
     declare_maxSpeed = DeclareLaunchArgument('maxSpeed', default_value='2.0', description='')
     declare_autonomyMode = DeclareLaunchArgument('autonomyMode', default_value='true', description='')
     delcare_autonomySpeed = DeclareLaunchArgument('autonomySpeed', default_value='2.0', description='')
@@ -113,9 +113,9 @@ def generate_launch_description():
             "dirWeight" : 0.02,
             "dirThre" : 90.0,
             "dirToVehicle" : False,
-            "pathScale" : 1.25,
-            "minPathScale" : 0.75,
-            "pathScaleStep" : 0.25,
+            "pathScale" : 0.5,
+            "minPathScale" : 0.1,
+            "pathScaleStep" : 0.1,
             "pathScaleBySpeed" : True,
             "minPathRange" : 1.0,
             "pathRangeStep" : 0.5,
